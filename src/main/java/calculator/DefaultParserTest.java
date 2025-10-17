@@ -21,6 +21,7 @@ public class DefaultParserTest {
 
     @Test
     void 숫자가_아닌값_입력시_예외_발생(){
+
         String input = "1,kkkk:3";
 
         assertThatThrownBy(() -> defaultDelimiter.parse(input))
