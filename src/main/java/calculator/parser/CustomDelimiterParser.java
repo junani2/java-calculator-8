@@ -1,7 +1,7 @@
-package calculator;
+package calculator.parser;
 
-import static calculator.CustomDelimiter.FIRST_DELIMITER;
-import static calculator.CustomDelimiter.LAST_DELIMITER;
+import static calculator.service.CustomDelimiter.FIRST_DELIMITER;
+import static calculator.service.CustomDelimiter.LAST_DELIMITER;
 
 public class CustomDelimiterParser {
 

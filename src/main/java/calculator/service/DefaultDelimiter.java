@@ -1,8 +1,7 @@
-package calculator;
+package calculator.service;
 
-import java.util.ArrayList;
 import java.util.List;
-import calculator.NumberParser;
+import calculator.parser.NumberParser;
 
 public class DefaultDelimiter {
 

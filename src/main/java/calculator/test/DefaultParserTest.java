@@ -1,8 +1,8 @@
-package calculator;
+package calculator.test;
 
+import calculator.service.DefaultDelimiter;
 import org.junit.jupiter.api.Test;
 
-import static java.beans.Beans.isInstanceOf;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class DefaultParserTest {

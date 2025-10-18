@@ -1,10 +1,11 @@
-package calculator;
+package calculator.test;
 
+import calculator.service.CustomDelimiter;
 import org.junit.jupiter.api.Test;
 
-import static camp.nextstep.edu.missionutils.test.Assertions.assertSimpleTest;
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import java.util.List;
+
+import static org.assertj.core.api.Assertions.*;
 
 public class CustomParserTest {
 
@@ -17,7 +18,7 @@ public class CustomParserTest {
 
         assertThatThrownBy(() -> customDelimiter.parse(input))
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessageContaining("invalid Delimiter");
+                .hasMessageContaining("invalid delimiter");
     }
 
     @Test
@@ -27,7 +28,7 @@ public class CustomParserTest {
 
         assertThatThrownBy(() -> customDelimiter.parse(input))
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessageContaining("invalid Delimiter");
+                .hasMessageContaining("invalid delimiter");
     }
 
     @Test
@@ -48,5 +49,14 @@ public class CustomParserTest {
         assertThatThrownBy(() -> customDelimiter.parse(input))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("invalid number is not allowed");
+    }
+
+    @Test
+    void 정상적인_커스텀_구분자_입력시(){
+
+        String input = "//;\n1;2;3";
+
+       List<Integer> result = customDelimiter.parse(input);
+        assertThat(result).isEqualTo(List.of(1, 2, 3));
     }
 }
